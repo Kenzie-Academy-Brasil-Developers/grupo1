@@ -232,11 +232,7 @@ select {
 	justify-content: center;
 	background: #FED954;
 	border-radius: 10px;
-<<<<<<< HEAD
-	box-shadow: 8px 8px 0px #4E2096, 8px 8px 0px 2px #ffc800; 
-=======
 	box-shadow: 8px 8px 0px #4E2096, 8px 8px 0px 2px #FFC800;
->>>>>>> 781ff8703b2bb581d823a391e5563cf6b1214455
 	height: 80px;
 	width: 300px;
 	font-size: 20px;
@@ -247,16 +243,9 @@ select {
 	bottom: 20px;
 	right: 20px;
 	animation: toast 10s ease-in forwards;
-<<<<<<< HEAD
-
-}	
-
- @keyframes toast {
-=======
 }
 
 @keyframes toast {
->>>>>>> 781ff8703b2bb581d823a391e5563cf6b1214455
 	0% {
 		right: 20px;
 		bottom: -100px
@@ -276,11 +265,7 @@ select {
 		right: 20px;
 		bottom: -100px
 	}
-<<<<<<< HEAD
-} 
-=======
 }
->>>>>>> 781ff8703b2bb581d823a391e5563cf6b1214455
 
 .hidden {
 	display: none;
