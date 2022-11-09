@@ -132,6 +132,52 @@ async function requestUpdatePetInfo(body,petId){
     }
 }
 
+async function adoptPet(body){
+    const token = getLocalStorage()
+    try{
+        const request = await fetch(`${baseUrl}adoptions`,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body:JSON.stringify(body)
+        })
+        const response = await request.json()
+        return response
+    }catch(error){
+        console.log(error)
+    }
+}
+
+async function registerPet(name, bread, specie, avatar) {
+    console.log(name)
+    console.log(bread)
+    console.log(specie)
+    console.log(avatar)
+
+    const token = getLocalStorage()
+    const data = {
+        "name": name,
+        "bread": bread,
+        "species": specie,
+        "avatar_url": avatar
+    }
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(data)
+    }
+    const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/pets', options)
+        .then((response) => response.json())
+        .then((response) => {
+            console.log(response)
+        })
+    return responseJSON
+}
 export {
     allPets,
     login,
@@ -139,5 +185,7 @@ export {
     renderMyProfile,
     myPets,
     deleteProfile,
-    requestUpdatePetInfo
+    requestUpdatePetInfo,
+    adoptPet,
+    registerPet
 }
