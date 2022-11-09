@@ -114,11 +114,37 @@ async function deleteProfile(){
     })
 }
 
+async function registerPet(name, bread, species, avatar) {
+    const data = {
+        "name": name,
+        "bread": bread,
+        "species": species,
+        "avatar_url": avatar
+    }
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }
+    const responseJSON = await fetch('https://m2-api-adot-pet.herokuapp.com/pets', options)
+        .then((response) => response.json())
+        .then((response) => {
+            console.log(response)
+            window.location.reload()
+        })
+    return responseJSON
+}
+
+
+
 export {
     allPets,
     login,
     register,
     renderMyProfile,
     myPets,
-    deleteProfile
+    deleteProfile,
+    registerPet
 }
