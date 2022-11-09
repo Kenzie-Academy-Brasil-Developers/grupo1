@@ -121,7 +121,7 @@ function deleteProfileUser() {
 
 } deleteProfileUser()
 
-/* async function updatePetInfo() {
+async function updatePetInfo() {
     const pets = await myPets()
     const form = document.querySelector("#formPet")
     const input = document.querySelector("#avatar_url")
@@ -138,7 +138,7 @@ function deleteProfileUser() {
             console.log(element)
         })
     });
-} updatePetInfo() */
+} updatePetInfo()
 
 async function renderRegisterPet() {
 
