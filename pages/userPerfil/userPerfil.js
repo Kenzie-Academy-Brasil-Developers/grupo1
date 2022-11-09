@@ -1,5 +1,5 @@
 import { modal } from "../../scripts/modal.js";
-import { deleteProfile, myPets, renderMyProfile, requestUpdatePetInfo } from "../../scripts/requestApi.js";
+import { deleteProfile, myPets, registerPet, renderMyProfile, requestUpdatePetInfo } from "../../scripts/requestApi.js";
 import { verifyPermissionAdmin } from "../../scripts/verifyPermission.js";
 
 verifyPermissionAdmin()
@@ -133,9 +133,29 @@ async function updatePetInfo() {
                 "bread": element.bread,
                 "species": element.species,
                 "avatar_url": input.value
-            } 
-            await requestUpdatePetInfo(edit,element.id)
+            }
+            await requestUpdatePetInfo(edit, element.id)
             console.log(element)
         })
     });
 } updatePetInfo()
+
+async function renderRegisterPet() {
+
+}
+
+async function captureInputRegister() {
+    const buttonRegister = document.querySelector("#button-submit-pet")
+    let inputName = document.getElementById("name")
+    let inputBread = document.getElementById("bread")
+    let selectSpecie = document.getElementById("select-specie")
+    let inputAvatar = document.getElementById("avatar_url")
+
+    buttonRegister.addEventListener("click", async (event) => {
+        event.preventDefault()
+        console.log(selectSpecie.value)
+        await registerPet(inputName.value, inputBread.value, selectSpecie.value, inputAvatar.value)
+        window.location.reload()
+    })
+}
+captureInputRegister()
