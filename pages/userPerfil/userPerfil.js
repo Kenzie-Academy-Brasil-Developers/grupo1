@@ -144,7 +144,7 @@ async function renderRegisterPet() {
 
 }
 
-async function captureInputRegister() {
+async function captureInputRegisterPet() {
     const buttonRegister = document.querySelector("#button-submit-pet")
     let inputName = document.getElementById("name")
     let inputBread = document.getElementById("bread")
@@ -158,4 +158,4 @@ async function captureInputRegister() {
         window.location.reload()
     })
 }
-captureInputRegister()
+captureInputRegisterPet()

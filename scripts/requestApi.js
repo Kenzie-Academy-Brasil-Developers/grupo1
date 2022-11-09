@@ -152,17 +152,6 @@ export async function registerPet(name, bread, specie, avatar) {
         .then((response) => response.json())
         .then((response) => {
             console.log(response)
-            /* if (!response.message) {
-                toastRegister(response)
-                setTimeout(() => {
-                    window.location.replace("../login/login.html")
-                }, 3000)
-            } else {
-                toastRegister(response)
-                setTimeout(() => {
-                    window.location.reload()
-                }, 2500)
-            } */
         })
     return responseJSON
 }
